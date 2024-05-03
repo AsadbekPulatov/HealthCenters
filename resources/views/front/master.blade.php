@@ -11,7 +11,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -32,7 +34,8 @@
 <body>
 
 <!-- Spinner Start -->
-<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
         <span class="sr-only">Loading...</span>
     </div>
@@ -45,17 +48,23 @@
     <div class="row gx-0 align-items-center" style="height: 45px;">
         <div class="col-lg-8 text-center text-lg-start mb-lg-0">
             <div class="d-flex flex-wrap">
-                <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A
+                    Location</a>
                 <a href="#" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                <a href="#" class="text-light me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
+                <a href="#" class="text-light me-0"><i
+                        class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
             </div>
         </div>
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-flex align-items-center justify-content-end">
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i
+                        class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
@@ -75,55 +84,50 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.blade.php" class="nav-item nav-link active">Home</a>
-                <a href="about.blade.php" class="nav-item nav-link">About</a>
-                <a href="service.blade.php" class="nav-item nav-link">Services</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="appointment.blade.php" class="dropdown-item">Appointment</a>
-                        <a href="feature.blade.php" class="dropdown-item">Features</a>
-                        <a href="blog.blade.php" class="dropdown-item">Our Blog</a>
-                        <a href="team.blade.php" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.blade.php" class="dropdown-item">Testimonial</a>
-                        <a href="404.blade.php" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
-                <a href="contact.blade.php" class="nav-item nav-link">Contact Us</a>
+                <a href="{{ route('index') }}" class="nav-item nav-link @if(request()->routeIs('index'))active @endif">Home</a>
+                <a href="{{ route('about') }}" class="nav-item nav-link @if(request()->routeIs('about'))active @endif">About</a>
+                <a href="{{ route('service') }}" class="nav-item nav-link @if(request()->routeIs('service'))active @endif">Services</a>
+                <a href="{{ route('contact') }}" class="nav-item nav-link @if(request()->routeIs('contact'))active @endif">Contact Us</a>
             </div>
-            <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
         </div>
     </nav>
 
 
-    <!-- Carousel Start -->
-    <div class="header-carousel owl-carousel">
-        <div class="header-carousel-item">
-            <img src="img/carousel-1.jpg" class="img-fluid w-100" alt="Image">
-            <div class="carousel-caption">
-                <div class="carousel-caption-content p-3">
-                    <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Physiotherapy Center</h5>
-                    <h1 class="display-1 text-capitalize text-white mb-4">Best Solution For Painful Life</h1>
-                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    </p>
-                    <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
+    @if(request()->routeIs('index'))
+        <!-- Carousel Start -->
+        <div class="header-carousel owl-carousel">
+            <div class="header-carousel-item">
+                <img src="{{ asset('front/img/carousel-1.jpg') }}" class="img-fluid w-100" alt="Image">
+                <div class="carousel-caption">
+                    <div class="carousel-caption-content p-3">
+                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Physiotherapy
+                            Center</h5>
+                        <h1 class="display-1 text-capitalize text-white mb-4">Best Solution For Painful Life</h1>
+                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </p>
+                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-carousel-item">
+                <img src="{{ asset('front/img/carousel-2.jpg') }}" class="img-fluid w-100" alt="Image">
+                <div class="carousel-caption">
+                    <div class="carousel-caption-content p-3">
+                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Physiotherapy
+                            Center</h5>
+                        <h1 class="display-1 text-capitalize text-white mb-4">Best Solution For Painful Life</h1>
+                        <p class="mb-5 fs-5 animated slideInDown">Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s,
+                        </p>
+                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="header-carousel-item">
-            <img src="img/carousel-2.jpg" class="img-fluid w-100" alt="Image">
-            <div class="carousel-caption">
-                <div class="carousel-caption-content p-3">
-                    <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Physiotherapy Center</h5>
-                    <h1 class="display-1 text-capitalize text-white mb-4">Best Solution For Painful Life</h1>
-                    <p class="mb-5 fs-5 animated slideInDown">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    </p>
-                    <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Carousel End -->
+        <!-- Carousel End -->
+    @endif
 </div>
 <!-- Navbar & Hero End -->
 
@@ -136,14 +140,19 @@
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Terapia</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos autem dolores laudantium quia, qui similique
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos autem
+                        dolores laudantium quia, qui similique
                     </p>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-share fa-2x text-white me-2"></i>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -195,7 +204,8 @@
                 <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                 <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                 <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
+                    class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
             </div>
         </div>
     </div>
