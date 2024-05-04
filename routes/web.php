@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HealthCenterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,9 +44,6 @@ Route::get('/service-single', function (){
     return view('front.service_single');
 })->name('service.single');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 
@@ -55,8 +54,8 @@ Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () 
     Route::get('/', function () {
         return view('adminpanel.master');
     })->middleware(['auth', 'verified'])->name('adminpanel');
-Route::resource('health_centers',\App\Http\Controllers\HealthCenterController::class);
-Route::resource('services',\App\Http\Controllers\ServiceController::class);
+Route::resource('health_centers',HealthCenterController::class);
+Route::resource('services',ServiceController::class);
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
