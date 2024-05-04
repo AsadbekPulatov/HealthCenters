@@ -34,10 +34,20 @@ Route::get('/center', function () {
     return view('front.centers');
 })->name('center');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
+
+
+
+Route::get('/admin', function () {
+    return view('admin.index');
+})->middleware(['auth'])->name('admin.index');
+Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('adminpanel.master');
+    })->middleware(['auth', 'verified'])->name('adminpanel');
+Route::resource('health_centers',\App\Http\Controllers\HealthCenterController::class);
+Route::resource('services',\App\Http\Controllers\ServiceController::class);
+});
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
