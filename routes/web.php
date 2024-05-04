@@ -34,6 +34,14 @@ Route::get('/center', function () {
     return view('front.centers');
 })->name('center');
 
+Route::get('/center-single', function (){
+   return view('front.center_single');
+})->name('center.single');
+
+Route::get('/service-single', function (){
+    return view('front.service_single');
+})->name('service.single');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

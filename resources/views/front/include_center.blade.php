@@ -20,7 +20,7 @@
                         </div>
                         <a href="#" class="h4">Markaz nomi</a>
                         <p class="my-4">Markaz tavsif</p>
-                        <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Batafsil ma'lumot</a>
+                        <a href="{{ route('center.single') }}" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Batafsil ma'lumot</a>
                     </div>
                 </div>
             </div>

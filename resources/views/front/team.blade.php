@@ -11,7 +11,7 @@
             <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item rounded">
                     <div class="team-img rounded-top h-100">
-                        <img src="img/output1.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <img src="{{ asset('front/img/team-1.jpg') }}" class="img-fluid rounded-top w-100" alt="">
                         <div class="team-icon d-flex justify-content-center">
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -28,7 +28,7 @@
             <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item rounded">
                     <div class="team-img rounded-top h-100">
-                        <img src="img/output 2.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <img src="{{ asset('front/img/team-2.jpg') }}" class="img-fluid rounded-top w-100" alt="">
                         <div class="team-icon d-flex justify-content-center">
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -45,7 +45,7 @@
             <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item rounded">
                     <div class="team-img rounded-top h-100">
-                        <img src="img/output3.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <img src="{{ asset('front/img/team-3.jpg') }}" class="img-fluid rounded-top w-100" alt="">
                         <div class="team-icon d-flex justify-content-center">
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -62,7 +62,7 @@
             <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="team-item rounded">
                     <div class="team-img rounded-top h-100">
-                        <img src="img/output4.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <img src="{{ asset('front/img/team-4.jpg') }}" class="img-fluid rounded-top w-100" alt="">
                         <div class="team-icon d-flex justify-content-center">
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>

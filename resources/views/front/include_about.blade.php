@@ -21,7 +21,6 @@
                         <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Odamning sharoitlarini yaxshilash: .</p>
                         <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Ko'p qismlili massaj ko'rsatilishi.</p>
                     </div>
-                    <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">More</a>
                 </div>
             </div>
         </div>
