@@ -22,6 +22,10 @@
                 <input type="text" class="form-control" id="name" placeholder="name" name="name" value="{{$services->name}}">
             </div>
             <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" class="form-control" cols="5" rows="5">{{$services->description}}</textarea>
+            </div>
+            <div class="form-group">
                 <label for="price">Price</label>
                 <input type="number" class="form-control" id="price"  name="price" value="{{$services->price}}">
             </div>

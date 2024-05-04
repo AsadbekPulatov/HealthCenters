@@ -41,6 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         @include('adminpanel.header')
 
+
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
@@ -49,6 +50,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content -->
+
+
     </div>
     <!-- /.content-wrapper -->
 

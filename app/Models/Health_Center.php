@@ -10,4 +10,8 @@ class Health_Center extends Model
     use HasFactory;
     protected  $table='health_centers';
     protected  $fillable=['name','description','address','phone','image','working_time'];
+
+    public function services(){
+        return $this->hasMany(Services::class, 'health_centers_id', 'id');
+    }
 }

@@ -15,7 +15,7 @@
                 <th>id</th>
                 <th>Health center name</th>
                 <th>Name</th>
-
+                <th>Description</th>
                 <th>price</th>
                 <th>Action</th>
 
@@ -36,6 +36,9 @@
                     </td>
                     <td>
                         {{$role['name']}}
+                    </td>
+                    <td>
+                        {{$role['description']}}
                     </td>
                     <td>
                         {{$role['price']}}

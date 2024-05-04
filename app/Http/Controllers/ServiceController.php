@@ -45,6 +45,7 @@ class ServiceController extends Controller
         $service=new Services();
         $service->health_centers_id=$services['health_centers_id'];
         $service->name=$services['name'];
+        $service->description=$services['description'];
         $service->price=$services['price'];
         $service->image=$services['image'];
         $service->save();
@@ -89,6 +90,7 @@ class ServiceController extends Controller
         $services->update([
             'health_centers_id' => $request->health_centers_id,
             'name' => $request->name,
+            'description'=>$request->description,
             'price' => $request->price,
             'image' => $filename ?? $services->image
         ]);
