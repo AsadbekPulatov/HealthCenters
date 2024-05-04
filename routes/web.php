@@ -30,6 +30,10 @@ Route::get('/contact', function () {
     return view('front.contact');
 })->name('contact');
 
+Route::get('/center', function () {
+    return view('front.centers');
+})->name('center');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

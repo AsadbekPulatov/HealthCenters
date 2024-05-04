@@ -4,7 +4,7 @@
             <div class="sub-style">
                 <h4 class="sub-title px-3 mb-0">JAMOAMIZ BILAN TANISHING</h4>
             </div>
-            <h1 class="display-3 mb-4">Professional terapevtning fizioterapiya xizmatlari</h1>
+            <h1 class="display-3 mb-4">Professional shifokorlar</h1>
             <p class="mb-0"></p>
         </div>
         <div class="row g-4 justify-content-center">

@@ -4,7 +4,7 @@
             <div class="sub-style">
                 <h4 class="sub-title px-3 mb-0">Nega bizni tanlaysiz?</h4>
             </div>
-            <h1 class="display-3 mb-4">Nega Bizni Tanlaysiz? Hayot Tarzingizni O'zgartiring.</h1>
+            <h1 class="display-3 mb-4">Nega Bizni Tanlaysiz?</h1>
             <p class="mb-0"></p>
         </div>
         <div class="row g-4 justify-content-center">

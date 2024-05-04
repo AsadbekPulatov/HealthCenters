@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Terapia - Physical Therapy Website Template</title>
+    <title>Sog'lomlashtirish markazi</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -80,10 +80,10 @@
             <div class="navbar-nav ms-auto py-0">
                 <a href="{{route('index')}}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Bosh sahifa</a>
                 <a href="{{route('about')}}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">Biz haqimizda</a>
+                <a href="{{route('center')}}" class="nav-item nav-link {{ request()->is('center') ? 'active' : '' }}">Markazlar</a>
                 <a href="{{route('service')}}" class="nav-item nav-link {{ request()->is('service') ? 'active' : '' }}">Xizmatlar</a>
                 <a href="{{route('contact')}}" class="nav-item nav-link {{ request()->is('/contact') ? 'active' : '' }}">Bog'lanish</a>
             </div>
-            <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
         </div>
     </nav>
 
@@ -111,7 +111,6 @@
                         <h1 class="display-1 text-capitalize text-white mb-4">Og'riqli Hayot Uchun Eng Yaxshi Yechim</h1>
                         <p class="mb-5 fs-5 animated slideInDown">
                         </p>
-                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
                     </div>
                 </div>
             </div>
@@ -123,65 +122,65 @@
 
 @yield('content')
 
-<!-- Footer Start -->
-<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Terapia</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos autem
-                        dolores laudantium quia, qui similique
-                    </p>
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-share fa-2x text-white me-2"></i>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
-                                class="fab fa-instagram"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Quick Links</h4>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> About Us</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Our Team</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Terapia Services</h4>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> All Services</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Physiotherapy</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Diagnostics</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Manual Therapy</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Massage Therapy</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Rehabilitation</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Contact Info</h4>
-                    <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                    <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                    <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                    <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                    <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+{{--<!-- Footer Start -->--}}
+{{--<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">--}}
+{{--    <div class="container py-5">--}}
+{{--        <div class="row g-5">--}}
+{{--            <div class="col-md-6 col-lg-6 col-xl-3">--}}
+{{--                <div class="footer-item d-flex flex-column">--}}
+{{--                    <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Terapia</h4>--}}
+{{--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos autem--}}
+{{--                        dolores laudantium quia, qui similique--}}
+{{--                    </p>--}}
+{{--                    <div class="d-flex align-items-center">--}}
+{{--                        <i class="fas fa-share fa-2x text-white me-2"></i>--}}
+{{--                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i--}}
+{{--                                class="fab fa-facebook-f"></i></a>--}}
+{{--                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i--}}
+{{--                                class="fab fa-twitter"></i></a>--}}
+{{--                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i--}}
+{{--                                class="fab fa-instagram"></i></a>--}}
+{{--                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i--}}
+{{--                                class="fab fa-linkedin-in"></i></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-6 col-lg-6 col-xl-3">--}}
+{{--                <div class="footer-item d-flex flex-column">--}}
+{{--                    <h4 class="mb-4 text-white">Quick Links</h4>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> About Us</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Our Team</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-6 col-lg-6 col-xl-3">--}}
+{{--                <div class="footer-item d-flex flex-column">--}}
+{{--                    <h4 class="mb-4 text-white">Terapia Services</h4>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> All Services</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Physiotherapy</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Diagnostics</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Manual Therapy</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Massage Therapy</a>--}}
+{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Rehabilitation</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-6 col-lg-6 col-xl-3">--}}
+{{--                <div class="footer-item d-flex flex-column">--}}
+{{--                    <h4 class="mb-4 text-white">Contact Info</h4>--}}
+{{--                    <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>--}}
+{{--                    <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>--}}
+{{--                    <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>--}}
+{{--                    <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>--}}
+{{--                    <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+{{--<!-- Footer End -->--}}
 
 <!-- Copyright Start -->
 <div class="container-fluid copyright py-4">
