@@ -48,23 +48,17 @@
     <div class="row gx-0 align-items-center" style="height: 45px;">
         <div class="col-lg-8 text-center text-lg-start mb-lg-0">
             <div class="d-flex flex-wrap">
-                <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A
-                    Location</a>
-                <a href="#" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                <a href="#" class="text-light me-0"><i
-                        class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
+                <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Manzil</a>
+                <a href="#" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+998945084801</a>
+                <a href="#" class="text-light me-0"><i class="fas fa-envelope text-primary me-2"></i>sog'lomlashtirish@gmail.com</a>
             </div>
         </div>
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-flex align-items-center justify-content-end">
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
-                        class="fab fa-twitter"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i
-                        class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
@@ -75,8 +69,8 @@
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-        <a href="index.blade.php" class="navbar-brand p-0">
-            <h1 class="text-primary m-0"><i class="fas fa-star-of-life me-3"></i>Terapia</h1>
+        <a href="{{route('index')}}" class="navbar-brand p-0">
+            <h1 class="text-primary m-0"><i class="fas fa-star-of-life me-3"></i>Sog'lom hayot</h1>
             <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -84,11 +78,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="{{ route('index') }}" class="nav-item nav-link @if(request()->routeIs('index'))active @endif">Home</a>
-                <a href="{{ route('about') }}" class="nav-item nav-link @if(request()->routeIs('about'))active @endif">About</a>
-                <a href="{{ route('service') }}" class="nav-item nav-link @if(request()->routeIs('service'))active @endif">Services</a>
-                <a href="{{ route('contact') }}" class="nav-item nav-link @if(request()->routeIs('contact'))active @endif">Contact Us</a>
+                <a href="{{route('index')}}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Bosh sahifa</a>
+                <a href="{{route('about')}}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">Biz haqimizda</a>
+                <a href="{{route('service')}}" class="nav-item nav-link {{ request()->is('service') ? 'active' : '' }}">Xizmatlar</a>
+                <a href="{{route('contact')}}" class="nav-item nav-link {{ request()->is('/contact') ? 'active' : '' }}">Bog'lanish</a>
             </div>
+            <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
         </div>
     </nav>
 
@@ -100,13 +95,11 @@
                 <img src="{{ asset('front/img/carousel-1.jpg') }}" class="img-fluid w-100" alt="Image">
                 <div class="carousel-caption">
                     <div class="carousel-caption-content p-3">
-                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Physiotherapy
-                            Center</h5>
-                        <h1 class="display-1 text-capitalize text-white mb-4">Best Solution For Painful Life</h1>
-                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Sog'lomlashtirish markazi</h5>
+                        <h1 class="display-1 text-capitalize text-white mb-4">Og'riqli Hayot Uchun Eng Yaxshi Yechim</h1>
+                        <p class="mb-5 fs-5">
                         </p>
-                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
+
                     </div>
                 </div>
             </div>
@@ -114,12 +107,9 @@
                 <img src="{{ asset('front/img/carousel-2.jpg') }}" class="img-fluid w-100" alt="Image">
                 <div class="carousel-caption">
                     <div class="carousel-caption-content p-3">
-                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Physiotherapy
-                            Center</h5>
-                        <h1 class="display-1 text-capitalize text-white mb-4">Best Solution For Painful Life</h1>
-                        <p class="mb-5 fs-5 animated slideInDown">Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                            1500s,
+                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Sog'lomlashtirish markazi</h5>
+                        <h1 class="display-1 text-capitalize text-white mb-4">Og'riqli Hayot Uchun Eng Yaxshi Yechim</h1>
+                        <p class="mb-5 fs-5 animated slideInDown">
                         </p>
                         <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
                     </div>
