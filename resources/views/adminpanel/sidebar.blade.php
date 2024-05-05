@@ -39,34 +39,43 @@
                         <p>Profile</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('admin.health_centers.index')}}"
-                       class="nav-link @if(request()->routeIs('admin.health_centers.index')) active @endif">
-                        <i class="fa fa-user nav-icon"></i>
-                        <p>Centers</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('admin.services.index')}}"
-                       class="nav-link @if(request()->routeIs('admin.services.index')) active @endif">
-                        <i class="fa fa-user nav-icon"></i>
-                        <p>Services</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('admin.doctors.index')}}"
-                       class="nav-link @if(request()->routeIs('admin.doctors.index')) active @endif">
-                        <i class="fa fa-user nav-icon"></i>
-                        <p>Doctors</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('admin.features.index')}}"
-                       class="nav-link @if(request()->routeIs('admin.features.index')) active @endif">
-                        <i class="fa fa-user nav-icon"></i>
-                        <p>Features</p>
-                    </a>
-                </li>
+                @if(auth()->id() == 1)
+                    <li class="nav-item">
+                        <a href="{{route('admin.health_centers.index')}}"
+                           class="nav-link @if(request()->routeIs('admin.health_centers.index')) active @endif">
+                            <i class="fa fa-user nav-icon"></i>
+                            <p>Centers</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.services.index')}}"
+                           class="nav-link @if(request()->routeIs('admin.services.index')) active @endif">
+                            <i class="fa fa-user nav-icon"></i>
+                            <p>Services</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.doctors.index')}}"
+                           class="nav-link @if(request()->routeIs('admin.doctors.index')) active @endif">
+                            <i class="fa fa-user nav-icon"></i>
+                            <p>Doctors</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.features.index')}}"
+                           class="nav-link @if(request()->routeIs('admin.features.index')) active @endif">
+                            <i class="fa fa-user nav-icon"></i>
+                            <p>Features</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('messages.index')}}"
+                           class="nav-link @if(request()->routeIs('messages.index')) active @endif">
+                            <i class="fa fa-mail-bulk nav-icon"></i>
+                            <p>Messages</p>
+                        </a>
+                    </li>
+                @endif
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">
                         @csrf

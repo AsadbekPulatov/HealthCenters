@@ -2,7 +2,7 @@
 @section('content')
     <div class="card card-primary">
         <div class="card-header">
-            <h1 class="card-title">Services </h1>
+            <h1 class="card-title">Doctors</h1>
         </div>
         <div class="card-body">
             <div class="flex justify-content-end mb-3">
@@ -36,7 +36,7 @@
                             {{$item['position']}}
                         </td>
                         <td>
-                            <img src="{{'storage/doctors/'.$item->image}}" alt="">
+                            <img src="{{ asset('storage/'.$item->image) }}" alt="">
                         </td>
 
                         <td>
@@ -61,11 +61,4 @@
             </table>
         </div>
     </div>
-    <div class="container">
-
-
-
-
-    </div>
-
 @endsection

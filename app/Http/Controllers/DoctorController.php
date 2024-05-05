@@ -34,15 +34,10 @@ class DoctorController extends Controller
     {
 
         $doctors = $request->all();
-//        dd($doctors);
-//dd($services);
         if ($request->hasFile('image')) {
-
             $filename = $uploadFile->uploadFile($request->image, 'doctors');
-
-            $doctor['image'] = $filename;
+            $doctors['image'] = $filename;
         }
-
         $doctor = new Doctor();
         $doctor->name = $doctors['name'];
         $doctor->position = $doctors['position'];
@@ -67,8 +62,6 @@ class DoctorController extends Controller
     public function edit($id)
     {
         $doctors = Doctor::find($id);
-
-//        dd($health_centers);
         return view('admin.doctors.edit', compact('doctors'));
     }
 

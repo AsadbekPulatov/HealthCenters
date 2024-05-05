@@ -8,7 +8,6 @@ class UploadFile
 {
     public static function uploadFile($file, $path)
     {
-//        $fileName = time() . $file->getClientOriginalName();
         $fileName = time() .'.'.$file->getClientOriginalExtension();
         $filePath = $file->storeAs($path, $fileName);
         return $filePath;

@@ -24,29 +24,30 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-5 col-xl-5 contact-form wow fadeInLeft" data-wow-delay="0.1s">
                         <h2 class="display-5 text-white mb-2">Get in Touch</h2>
-                        <form>
+                        <form action="{{ route('messages.store') }}" method="post">
+                            @csrf
                             <div class="row g-3">
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent border border-white" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control bg-transparent border border-white" id="name" placeholder="Your Name" name="name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control bg-transparent border border-white" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control bg-transparent border border-white" id="email" placeholder="Your Email" name="email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent border border-white" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control bg-transparent border border-white" id="subject" placeholder="Subject" name="title">
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control bg-transparent border border-white" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                        <textarea class="form-control bg-transparent border border-white" placeholder="Leave a message here" id="message" name="message" style="height: 160px"></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>

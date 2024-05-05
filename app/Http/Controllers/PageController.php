@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
+use App\Models\Features;
 use App\Models\Health_Center;
 use App\Models\Services;
 use Illuminate\Http\Request;
@@ -10,15 +12,20 @@ class PageController extends Controller
 {
     public function index(){
         $services = Services::orderby('id', 'DESC')->get();
-        return view('front.index', compact('services'));
+        $doctors = Doctor::orderby('id', 'DESC')->get();
+        $features = Features::orderby('id', 'DESC')->get();
+        return view('front.index', compact('services', 'doctors', 'features'));
     }
 
     public function about(){
-        return view('front.about');
+        $doctors = Doctor::orderby('id', 'DESC')->get();
+        $features = Features::orderby('id', 'DESC')->get();
+        return view('front.about', compact('doctors','features'));
     }
 
     public function service(Request $request){
         $data = $request->all();
+        $features = Features::orderby('id', 'DESC')->get();
         if (count($data) > 0){
             $services = Services::query();
             if (isset($data['name'])){
@@ -34,7 +41,7 @@ class PageController extends Controller
         }else{
             $services = Services::orderby('id', 'DESC')->get();
         }
-        return view('front.service', compact('services'));
+        return view('front.service', compact('services', 'features'));
     }
 
     public function contact(){

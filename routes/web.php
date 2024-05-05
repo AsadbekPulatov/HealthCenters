@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HealthCenterController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -48,5 +49,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/service/{id}/booking', [BookingController::class, 'booking'])->name('service.booking');
 });
+
+Route::resource('messages', MessageController::class);
 
 require __DIR__.'/auth.php';
