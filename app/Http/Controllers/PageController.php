@@ -19,7 +19,6 @@ class PageController extends Controller
 
     public function service(Request $request){
         $data = $request->all();
-//        dd($data);
         if (count($data) > 0){
             $services = Services::query();
             if (isset($data['name'])){

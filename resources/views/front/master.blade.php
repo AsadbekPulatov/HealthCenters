@@ -29,6 +29,12 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
+
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script>
+
+
 </head>
 
 <body>
@@ -204,6 +210,30 @@
 <!-- Back to Top -->
 <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
+<script>
+    @if(session('success'))
+    Swal.fire(
+        {
+            icon: 'success',
+            title:"<h1>Muvaffaqiyatli</h1>",
+            text:'{{session('success')}}',
+            showConfirmButton:true,
+            timer:3000
+        }
+    )
+    @endif
+    @if(session('error'))
+    Swal.fire(
+        {
+            icon: 'error',
+            title:"<h1>Xatolik</h1>",
+            text:'{{session('error')}}',
+            showConfirmButton:true,
+            timer:3000
+        }
+    )
+    @endif
+</script>
 
 <!-- JavaScript Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

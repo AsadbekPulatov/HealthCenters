@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     Swal.fire(
         {
             icon: 'error',
-            title:"<h1>Muvaffaqiyatli</h1>",
+            title:"<h1>Xatolik</h1>",
             text:'{{session('error')}}',
             showConfirmButton:true,
             timer:3000

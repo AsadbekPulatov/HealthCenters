@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HealthCenterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
@@ -42,6 +43,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/service/{id}/booking', [BookingController::class, 'booking'])->name('service.booking');
 });
 
 require __DIR__.'/auth.php';
