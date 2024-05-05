@@ -29,10 +29,12 @@
                     </div>
                 </div>
             @endforeach
-            <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="{{ route('service') }}">Barcha
-                    xizmatlar</a>
-            </div>
+            @if(request()->routeIs('index'))
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="{{ route('service') }}">Barcha
+                        xizmatlar</a>
+                </div>
+            @endif
         </div>
     </div>
 </div>

@@ -216,7 +216,7 @@
 
 <!-- Template Javascript -->
 <script src="{{ asset('front/js/main.js') }}"></script>
-
+@yield('script')
 </body>
 
 </html>
