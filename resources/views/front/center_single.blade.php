@@ -21,7 +21,7 @@
                     <hr>
                     <p class="h-4">Xizmatlar:</p>
                     @foreach($center->services as $item)
-                        <a href="" class="btn btn-info">{{ $item->name }}</a>
+                        <a href="{{ route('service.single', $item->id) }}" class="btn btn-info">{{ $item->name }}</a>
                     @endforeach
                 </div>
                 <div class="col-12 p-3">

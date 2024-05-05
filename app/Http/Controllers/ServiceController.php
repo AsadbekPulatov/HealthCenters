@@ -14,8 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services=Services::all();
-        return view('admin.services.index',compact('services'));
+        $services = Services::all();
+        return view('admin.services.index', compact('services'));
     }
 
     /**
@@ -23,17 +23,17 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $health_centers=Health_Center::all();
-        return view('admin.services.create',compact('health_centers'));
+        $health_centers = Health_Center::all();
+        return view('admin.services.create', compact('health_centers'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request,UploadFile $uploadFile)
+    public function store(Request $request, UploadFile $uploadFile)
     {
 
-        $services=$request->all();
+        $services = $request->all();
 //dd($services);
         if ($request->hasFile('image')) {
 
@@ -42,14 +42,13 @@ class ServiceController extends Controller
             $services['image'] = $filename;
         }
 
-        $service=new Services();
-        $service->health_centers_id=$services['health_centers_id'];
-        $service->name=$services['name'];
-        $service->description=$services['description'];
-        $service->price=$services['price'];
-        $service->image=$services['image'];
+        $service = new Services();
+        $service->health_centers_id = $services['health_centers_id'];
+        $service->name = $services['name'];
+        $service->description = $services['description'];
+        $service->price = $services['price'];
+        $service->image = $services['image'];
         $service->save();
-
 
 
         return redirect()->route('admin.services.index');
@@ -68,10 +67,10 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $services=Services::find($id);
-        $health_centers=Health_Center::all();
+        $services = Services::find($id);
+        $health_centers = Health_Center::all();
 //        dd($health_centers);
-        return view('admin.services.edit',compact('services','health_centers'));
+        return view('admin.services.edit', compact('services', 'health_centers'));
     }
 
     /**
@@ -79,22 +78,20 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $services=Services::find($id);
+        $services = Services::find($id);
         if ($services->image) {
             UploadFile::deleteFile($services->image);
         }
 
         $uploadedFile = $request->file('image');
         $filename = UploadFile::uploadFile($uploadedFile, 'services');
-
         $services->update([
             'health_centers_id' => $request->health_centers_id,
             'name' => $request->name,
-            'description'=>$request->description,
+            'description' => $request->description,
             'price' => $request->price,
             'image' => $filename ?? $services->image
         ]);
-//        dd($health_Center);
         return redirect()->route('admin.services.index');
 
     }
@@ -104,7 +101,7 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        $services=Services::find($id);
+        $services = Services::find($id);
         if ($services->image) {
             UploadFile::deleteFile($services->image);
         }

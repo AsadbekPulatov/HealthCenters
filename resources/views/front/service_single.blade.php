@@ -14,10 +14,10 @@
                     </div>
                     <p class="my-4">{{ $service->description }}</p>
                     <hr>
-                    <p class="h-4">Narkaz: {{ $service->health_services->name }}</p>
+                    <p class="h-4">Narkaz: <a href="{{ route('center.single', $service->health_services->id) }}">{{ $service->health_services->name }}</a></p>
                     <p class="h-4">Narxi: {{ $service->price }} so'm</p>
                     <hr>
-                    <a href="" class="btn btn-info">Buyurtma berish</a>
+                    <a href="#" class="btn btn-info">Buyurtma berish</a>
                 </div>
             </div>
         </div>

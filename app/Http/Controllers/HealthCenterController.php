@@ -13,8 +13,8 @@ class HealthCenterController extends Controller
      */
     public function index()
     {
-        $healh_centers=Health_Center::all();
-        return view('admin.health_centers.index',compact('healh_centers'));
+        $healh_centers = Health_Center::all();
+        return view('admin.health_centers.index', compact('healh_centers'));
     }
 
     /**
@@ -28,9 +28,9 @@ class HealthCenterController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request,UploadFile $uploadFile)
+    public function store(Request $request, UploadFile $uploadFile)
     {
-       $centers=$request->all();
+        $centers = $request->all();
 
         if ($request->hasFile('image')) {
 
@@ -38,14 +38,14 @@ class HealthCenterController extends Controller
 
             $centers['image'] = $filename;
         }
-$health_centers=Health_Center::create([
-    'name'=>$centers['name'],
-    'description'=>$centers['description'],
-    'address'=>$centers['address'],
-    'phone'=>$centers['phone'],
-    'working_time'=>$centers['working_time'],
-    'image'=>$centers['image'],
-]);
+        $health_centers = Health_Center::create([
+            'name' => $centers['name'],
+            'description' => $centers['description'],
+            'address' => $centers['address'],
+            'phone' => $centers['phone'],
+            'working_time' => $centers['working_time'],
+            'image' => $centers['image'],
+        ]);
         return redirect()->route('admin.health_centers.index');
 
     }
@@ -63,16 +63,16 @@ $health_centers=Health_Center::create([
      */
     public function edit($id)
     {
-      $health_centers = Health_Center::find($id);
+        $health_centers = Health_Center::find($id);
         return view('admin.health_centers.edit', compact('health_centers'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-        $health_Center=Health_Center::find($id);
+        $health_Center = Health_Center::find($id);
         if ($health_Center->image) {
             UploadFile::deleteFile($health_Center->image);
         }
@@ -98,7 +98,7 @@ $health_centers=Health_Center::create([
      */
     public function destroy($id)
     {
-        $health_Center =Health_Center::find($id);
+        $health_Center = Health_Center::find($id);
         if ($health_Center->image) {
             UploadFile::deleteFile($health_Center->image);
         }
