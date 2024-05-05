@@ -38,6 +38,8 @@ Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () 
 
 Route::resource('health_centers',HealthCenterController::class);
 Route::resource('services',ServiceController::class);
+Route::resource('doctors',\App\Http\Controllers\DoctorController::class);
+Route::resource('features',\App\Http\Controllers\FeaturesController::class);
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
