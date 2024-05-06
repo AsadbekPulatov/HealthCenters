@@ -60,7 +60,7 @@ class MessageController extends Controller
             'message'=>htmlspecialchars($request->message),
         ];
         Message::create($massage);
-        return  redirect()->back()->with('success', 'Xabar jo\'natildi.');
+        return  redirect()->back()->with('success', 'Xabar yuborildi.');
     }
 
     /**

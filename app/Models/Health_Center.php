@@ -14,10 +14,10 @@ class Health_Center extends Model
 
     public function services()
     {
-        return $this->hasMany(Services::class, 'health_centers_id', 'id');
+        return $this->hasMany(Services::class, 'health_centers_id', 'id')->orderBy('id', 'DESC');
     }
 
     public function comments(){
-        return $this->hasMany(Rating::class, 'heath_center_id', 'id');
+        return $this->hasMany(Rating::class, 'heath_center_id', 'id')->orderBy('id', 'DESC');
     }
 }
