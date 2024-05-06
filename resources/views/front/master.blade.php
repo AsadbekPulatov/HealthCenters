@@ -130,7 +130,7 @@
                 </div>
             </div>
             <div class="header-carousel-item">
-                <img src="{{ asset('front/img/carousel-2.jpg') }}" class="img-fluid w-100" alt="Image">
+                <img src="{{ asset('front/img/blog-3.jpg') }}" class="img-fluid w-100" alt="Image">
                 <div class="carousel-caption">
                     <div class="carousel-caption-content p-3">
                         <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">

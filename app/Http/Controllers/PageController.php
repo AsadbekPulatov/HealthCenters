@@ -30,7 +30,7 @@ class PageController extends Controller
             $services = Services::query();
             if (isset($data['name'])){
                 $name = $data['name'];
-                $services = $services->where('name', 'LIKE', $name);
+                $services = $services->where('name', 'LIKE', "%$name%");
             }
             if (isset($data['from']) && isset($data['to'])){
                 $from = intval($data['from']);
@@ -55,11 +55,11 @@ class PageController extends Controller
             $centers = Health_Center::query();
             if (isset($data['name'])){
                 $name = $data['name'];
-                $centers = $centers->where('name', 'LIKE', $name);
+                $centers = $centers->where('name', 'LIKE', "%$name%");
             }
             if (isset($data['address'])){
                 $address = $data['address'];
-                $centers = $centers->where('address', 'LIKE', $address);
+                $centers = $centers->where('address', 'LIKE', "%$address%");
             }
             if (isset($data['service'])){
                 $service = $data['service'];

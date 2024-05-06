@@ -14,7 +14,7 @@
                     <div class="service-item rounded">
                         <div class="service-img rounded-top">
                             <img src="{{ asset('storage/'.$item->image) }}" class="img-fluid rounded-top w-100"
-                                 alt="">
+                                 alt="" style="height: 250px;">
                         </div>
                         <div class="service-content rounded-bottom bg-light p-4">
                             <div class="service-content-inner">

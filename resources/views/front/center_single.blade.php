@@ -5,10 +5,15 @@
     <?php
     $comments = $center->comments;
     $star = 0;
-    foreach ($comments as $comment) {
-        $star += $comment->rating;
+    if (isset($comments)) {
+        foreach ($comments as $comment) {
+            $star += $comment->rating;
+        }
+        if (count($comments) == 0){
+            $star = 0;
+        } else
+            $star /= count($comments);
     }
-    $star /= count($comments);
     ?>
     <div class="container-fluid blog py-5">
         <div class="container py-5">

@@ -7,8 +7,8 @@
             <h1 class="display-3 mb-4">Nega Bizni Tanlaysiz?</h1>
             <p class="mb-0"></p>
         </div>
-        @foreach($features as $item)
-            <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center">
+            @foreach($features as $item)
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row-cols-1 feature-item p-4">
                         <div class="col-12">
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
 </div>

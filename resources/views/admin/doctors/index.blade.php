@@ -31,7 +31,7 @@
                             {{$item['position']}}
                         </td>
                         <td>
-                            <img src="{{ asset('storage/'.$item->image) }}" alt="">
+                            <img src="{{ asset('storage/'.$item->image) }}" alt="" style="height: 200px;">
                         </td>
                         <td>
                             <form action="{{route('admin.doctors.destroy',$item->id)}}" method="post"
