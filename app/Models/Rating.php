@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
+class Rating extends Model
 {
     use HasFactory;
 
@@ -15,9 +15,5 @@ class Booking extends Model
 
     public function service(){
         return $this->belongsTo(Services::class, 'service_id', 'id');
-    }
-
-    public function comments(){
-        return $this->hasMany(Rating::class, 'booking_id', 'id');
     }
 }

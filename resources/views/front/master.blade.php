@@ -61,10 +61,14 @@
         </div>
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-flex align-items-center justify-content-end">
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i
+                        class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
@@ -84,11 +88,25 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="{{route('index')}}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Bosh sahifa</a>
-                <a href="{{route('about')}}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">Biz haqimizda</a>
+                <a href="{{route('index')}}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Bosh
+                    sahifa</a>
+                <a href="{{route('about')}}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">Biz
+                    haqimizda</a>
                 <a href="{{route('center')}}" class="nav-item nav-link {{ request()->is('center') ? 'active' : '' }}">Markazlar</a>
                 <a href="{{route('service')}}" class="nav-item nav-link {{ request()->is('service') ? 'active' : '' }}">Xizmatlar</a>
-                <a href="{{route('contact')}}" class="nav-item nav-link {{ request()->is('/contact') ? 'active' : '' }}">Bog'lanish</a>
+                <a href="{{route('contact')}}"
+                   class="nav-item nav-link {{ request()->is('/contact') ? 'active' : '' }}">Bog'lanish</a>
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="nav-item nav-link">{{ auth()->user()->name }}</a>
+                    @else
+                        <a href="{{ route('login') }}" class="nav-item nav-link">Kirish</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="nav-item nav-link">Ro'yxatdan o'tish</a>
+                        @endif
+                    @endauth
+                @endif
             </div>
         </div>
     </nav>
@@ -101,8 +119,10 @@
                 <img src="{{ asset('front/img/carousel-1.jpg') }}" class="img-fluid w-100" alt="Image">
                 <div class="carousel-caption">
                     <div class="carousel-caption-content p-3">
-                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Sog'lomlashtirish markazi</h5>
-                        <h1 class="display-1 text-capitalize text-white mb-4">Og'riqli Hayot Uchun Eng Yaxshi Yechim</h1>
+                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">
+                            Sog'lomlashtirish markazi</h5>
+                        <h1 class="display-1 text-capitalize text-white mb-4">Og'riqli Hayot Uchun Eng Yaxshi
+                            Yechim</h1>
                         <p class="mb-5 fs-5">
                         </p>
 
@@ -113,8 +133,10 @@
                 <img src="{{ asset('front/img/carousel-2.jpg') }}" class="img-fluid w-100" alt="Image">
                 <div class="carousel-caption">
                     <div class="carousel-caption-content p-3">
-                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Sog'lomlashtirish markazi</h5>
-                        <h1 class="display-1 text-capitalize text-white mb-4">Og'riqli Hayot Uchun Eng Yaxshi Yechim</h1>
+                        <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">
+                            Sog'lomlashtirish markazi</h5>
+                        <h1 class="display-1 text-capitalize text-white mb-4">Og'riqli Hayot Uchun Eng Yaxshi
+                            Yechim</h1>
                         <p class="mb-5 fs-5 animated slideInDown">
                         </p>
                     </div>
@@ -128,65 +150,6 @@
 
 @yield('content')
 
-{{--<!-- Footer Start -->--}}
-{{--<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">--}}
-{{--    <div class="container py-5">--}}
-{{--        <div class="row g-5">--}}
-{{--            <div class="col-md-6 col-lg-6 col-xl-3">--}}
-{{--                <div class="footer-item d-flex flex-column">--}}
-{{--                    <h4 class="text-white mb-4"><i class="fas fa-star-of-life me-3"></i>Terapia</h4>--}}
-{{--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorem impedit eos autem--}}
-{{--                        dolores laudantium quia, qui similique--}}
-{{--                    </p>--}}
-{{--                    <div class="d-flex align-items-center">--}}
-{{--                        <i class="fas fa-share fa-2x text-white me-2"></i>--}}
-{{--                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i--}}
-{{--                                class="fab fa-facebook-f"></i></a>--}}
-{{--                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i--}}
-{{--                                class="fab fa-twitter"></i></a>--}}
-{{--                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i--}}
-{{--                                class="fab fa-instagram"></i></a>--}}
-{{--                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href=""><i--}}
-{{--                                class="fab fa-linkedin-in"></i></a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg-6 col-xl-3">--}}
-{{--                <div class="footer-item d-flex flex-column">--}}
-{{--                    <h4 class="mb-4 text-white">Quick Links</h4>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> About Us</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Our Team</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg-6 col-xl-3">--}}
-{{--                <div class="footer-item d-flex flex-column">--}}
-{{--                    <h4 class="mb-4 text-white">Terapia Services</h4>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> All Services</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Physiotherapy</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Diagnostics</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Manual Therapy</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Massage Therapy</a>--}}
-{{--                    <a href=""><i class="fas fa-angle-right me-2"></i> Rehabilitation</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg-6 col-xl-3">--}}
-{{--                <div class="footer-item d-flex flex-column">--}}
-{{--                    <h4 class="mb-4 text-white">Contact Info</h4>--}}
-{{--                    <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>--}}
-{{--                    <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>--}}
-{{--                    <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>--}}
-{{--                    <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>--}}
-{{--                    <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--<!-- Footer End -->--}}
 
 <!-- Copyright Start -->
 <div class="container-fluid copyright py-4">
@@ -215,10 +178,10 @@
     Swal.fire(
         {
             icon: 'success',
-            title:"<h1>Muvaffaqiyatli</h1>",
-            text:'{{session('success')}}',
-            showConfirmButton:true,
-            timer:3000
+            title: "<h1>Muvaffaqiyatli</h1>",
+            text: '{{session('success')}}',
+            showConfirmButton: true,
+            timer: 3000
         }
     )
     @endif
@@ -226,10 +189,10 @@
     Swal.fire(
         {
             icon: 'error',
-            title:"<h1>Xatolik</h1>",
-            text:'{{session('error')}}',
-            showConfirmButton:true,
-            timer:3000
+            title: "<h1>Xatolik</h1>",
+            text: '{{session('error')}}',
+            showConfirmButton: true,
+            timer: 3000
         }
     )
     @endif

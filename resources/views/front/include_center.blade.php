@@ -8,6 +8,14 @@
         </div>
         <div class="row g-4 justify-content-center">
             @foreach($centers as $item)
+                <?php
+                    $comments = $item->comments;
+                    $star = 0;
+                    foreach ($comments as $comment){
+                        $star += $comment->rating;
+                    }
+                    $star /= count($comments);
+                ?>
                 <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="blog-item rounded">
                         <div class="blog-img">
@@ -15,8 +23,8 @@
                         </div>
                         <div class="blog-centent p-4">
                             <div class="d-flex justify-content-between mb-4">
-                                <p class="mb-0 text-muted"><i class="fa fa-star text-primary"></i> 5 </p>
-                                <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3
+                                <p class="mb-0 text-muted"><i class="fa fa-star text-primary"></i> {{ $star }} </p>
+                                <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> {{ count($comments) }}
                                     Izohlar</a>
                             </div>
                             <a href="#" class="h4">{{ $item->name }}</a>

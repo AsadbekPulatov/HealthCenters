@@ -16,4 +16,8 @@ class Health_Center extends Model
     {
         return $this->hasMany(Services::class, 'health_centers_id', 'id');
     }
+
+    public function comments(){
+        return $this->hasMany(Rating::class, 'heath_center_id', 'id');
+    }
 }

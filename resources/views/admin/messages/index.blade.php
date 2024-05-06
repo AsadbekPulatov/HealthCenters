@@ -2,19 +2,19 @@
 @section('content')
     <div class="card card-primary">
         <div class="card-header">
-            <h1 class="card-title">Messages</h1>
+            <h1 class="card-title">Xabarlar</h1>
         </div>
         <div class="card-body">
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Ism</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Message</th>
-                    <th scope="col">Is Read</th>
-                    <th scope="col"></th>
+                    <th scope="col">Sarlavha</th>
+                    <th scope="col">Xabar</th>
+                    <th scope="col">Holat</th>
+                    <th scope="col">Amallar</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,9 +28,9 @@
                         <td>{{ \Illuminate\Support\Str::limit($massage->message, 20) }}</td>
                         <td>
                             @if($massage->activity)
-                                <button class="btn btn-success">New</button>
+                                <button class="btn btn-success">Yangi</button>
                             @else
-                                <button class="btn btn-danger">Old</button>
+                                <button class="btn btn-danger">Eski</button>
                             @endif
                         </td>
                         <td class="col-2">

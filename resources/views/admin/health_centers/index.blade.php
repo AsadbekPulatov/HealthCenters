@@ -2,21 +2,22 @@
 @section('content')
     <div class="card card-primary">
         <div class="card-header">
-            <h1 class="card-title">Health centers </h1>
+            <h1 class="card-title">Markazlar</h1>
         </div>
         <div class="card-body">
             <div class="flex justify-content-end mb-3">
-                <a href="{{route('admin.health_centers.create')}}" class="btn btn-primary">Create</a>
+                <a href="{{route('admin.health_centers.create')}}" class="btn btn-primary">Yaratish</a>
             </div>
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                 <tr>
-                    <th>id</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>working_time</th>
+                    <th>#</th>
+                    <th>Nomi</th>
+                    <th class="col-6">Tavsif</th>
+                    <th>Manzil</th>
+                    <th>Tel:</th>
+                    <th>Ish vaqti</th>
+                    <th>Amallar</th>
                 </tr>
                 </thead>
                 <tbody>
