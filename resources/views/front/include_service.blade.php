@@ -20,7 +20,7 @@
                             <div class="service-content-inner">
                                 <h5 class="mb-4">{{ $item->name }}</h5>
                                 <p class="mb-4">{{ \Illuminate\Support\Str::limit($item->description) }}</p>
-                                <p>Narkaz: {{ $item->health_services->name }}</p>
+                                <p>Markaz: {{ $item->health_services->name }}</p>
                                 <p>Narxi: {{ $item->price }} so'm</p>
                                 <a href="{{ route('service.single', $item->id) }}"
                                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Ko'proq o'qish</a>
