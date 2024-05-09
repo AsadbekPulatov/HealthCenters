@@ -61,14 +61,17 @@
         </div>
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-flex align-items-center justify-content-end">
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
-                        class="fab fa-twitter"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i
-                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/welnesssurgench1223?mibextid=ZbWKwL" target="_blank"
+                   class="btn btn-light btn-square border rounded-circle nav-fill me-3">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://t.me/welnessurganch" target="_blank"
+                   class="btn btn-light btn-square border rounded-circle nav-fill me-3">
+                    <i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/welnesss_urganch?igsh=cnEwYXA4ZDZ2M3Mx"
+                   class="btn btn-light btn-square border rounded-circle nav-fill me-3">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -156,14 +159,11 @@
     <div class="container">
         <div class="row g-4 align-items-center">
             <div class="col-md-6 text-center text-md-start mb-md-0">
-                <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-            </div>
-            <div class="col-md-6 text-center text-md-end text-white">
-                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
-                    class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                <span class="text-white">
+                    <a href="{{ route('index') }}">
+                        <i class="fas fa-copyright text-light me-2"></i>Sog'lom hayot
+                    </a>, Barcha huquqlar himoyalangan.
+                </span>
             </div>
         </div>
     </div>
