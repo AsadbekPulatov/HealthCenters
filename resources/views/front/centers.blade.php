@@ -37,15 +37,7 @@
                             </div>
                             <div class="form-group mb-2">
                                 <label for="service">Xizmat</label>
-                                <select name="service" id="service" class="form-control form-select">
-                                    <option value="0">Barchasi</option>
-                                    <?php
-                                        $service = $data['service'] ?? '';
-                                    ?>
-                                    @foreach($services as $item)
-                                        <option value="{{ $item->name }}" @if($item->name == $service) selected @endif>{{ $item->name }}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" class="form-control" id="service" name="service" value="{{ $data['service'] ?? '' }}">
                             </div>
                         </div>
                         <div class="modal-footer">

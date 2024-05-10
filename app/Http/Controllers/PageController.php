@@ -65,7 +65,7 @@ class PageController extends Controller
                 $service = $data['service'];
                 if ($service != '0')
                 $centers = $centers->with('services')->whereHas('services', function ($q) use ($service) {
-                    $q->where('name', $service);
+                    $q->where('name', 'LIKE', "%$service%");
                 });
             }
             $centers = $centers->get();
