@@ -9,14 +9,9 @@
         </div>
         <div class="row g-4 justify-content-center">
             @foreach($features as $item)
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="row-cols-1 feature-item p-4">
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s" style="display: flex; flex-wrap: wrap;">
+                    <div class="row-cols-1 feature-item p-4" style="width: 100%;">
                         <div class="col-12">
-                            {{--                        <div class="feature-icon mb-4">--}}
-                            {{--                            <div class="p-3 d-inline-flex bg-white rounded">--}}
-                            {{--                                <i class="fas fa-diagnoses fa-4x text-primary"></i>--}}
-                            {{--                            </div>--}}
-                            {{--                        </div>--}}
                             <div class="feature-content d-flex flex-column">
                                 <h5 class="mb-4">{{ $item->name }}</h5>
                                 <p class="mb-0">{{ $item->description }}</p>

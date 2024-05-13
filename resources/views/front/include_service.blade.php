@@ -16,7 +16,7 @@
                             <img src="{{ asset('storage/'.$item->image) }}" class="img-fluid rounded-top w-100"
                                  alt="" style="height: 250px;">
                         </div>
-                        <div class="service-content rounded-bottom bg-light p-4">
+                        <div class="service-content rounded-bottom bg-light p-4" style="height: 350px;">
                             <div class="service-content-inner">
                                 <h5 class="mb-4">{{ $item->name }}</h5>
                                 <p class="mb-4">{{ \Illuminate\Support\Str::limit($item->description) }}</p>

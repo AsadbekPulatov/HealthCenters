@@ -6,7 +6,7 @@
             </div>
             <h1 class="display-3 mb-4">SOG'LOMLASHTIRISH MARKAZLARI</h1>
         </div>
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 d-flex" style="flex-wrap: wrap">
             @foreach($centers as $item)
                 <?php
                 $comments = $item->comments;
@@ -26,7 +26,7 @@
                         <div class="blog-img">
                             <img src="{{ asset('storage/'.$item->image) }}" class="img-fluid w-100" alt="Image" style="height: 300px;">
                         </div>
-                        <div class="blog-centent p-4">
+                        <div class="blog-centent p-4" style="height: 300px;">
                             <div class="d-flex justify-content-between mb-4">
                                 <p class="mb-0 text-muted"><i class="fa fa-star text-primary"></i> {{ $star }} </p>
                                 <a href="#" class="text-muted"><span
