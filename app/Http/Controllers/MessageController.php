@@ -108,9 +108,9 @@ class MessageController extends Controller
      * @param  \App\Models\Message  $massage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Message $massage)
+    public function destroy(Message $message)
     {
-        $massage->delete();
-        return  redirect()->route('massage.index');
+        $message->delete();
+        return  redirect()->back();
     }
 }
